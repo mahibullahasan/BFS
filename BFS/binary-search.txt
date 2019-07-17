@@ -1,0 +1,33 @@
+#include<stdio.h>
+int main ()
+{
+    int i,j,A[30],mid,key,s,start,end;
+    scanf("%d",&s);
+    for(i=0; i<s; i++)
+    {
+        scanf("%d",&A[i]);
+    }
+    scanf("%d",&key);
+    start=0;
+    end=s-1;
+
+    while(start<=end)
+    {
+        mid=(start+end)/2;
+        if(A[mid]==key)
+        {
+            printf("Found at position %d\n",mid+1);
+            return;
+        }
+        else if(A[mid]>key)
+        {
+            end=mid-1;
+        }
+        else
+            start=mid+1;
+
+
+    }
+    printf("Not found\n");
+    return 0;
+}
